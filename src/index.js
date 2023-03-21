@@ -11,7 +11,6 @@ let handleFormSubmitter = (event) => {
 }
 
 let printElements = (apiResponse) => {
-  console.log(apiResponse.id);
   document.querySelector(".cryptoName").innerText = `Ticker: ${apiResponse.id}`;
   document.querySelector(".cryptoPrice").innerText = `Current Price: $${apiResponse.market_data.current_price.usd}`;
   document.querySelector(".cryptoDescription").innerText = apiResponse.description.en;
