@@ -7,12 +7,14 @@ let handleFormSubmitter = (event) => {
   event.preventDefault();
   const ticker = document.querySelector('#crypto').value;
   cryptoInfo(ticker);
+
 }
 
 let printElements = (apiResponse) => {
-  document.querySelector("cryptoName").innerText = `Ticker: ${apiResponse.id}`;
-  document.querySelector("cryptoPrice").innerText = `Current Price: $${apiResponse.market_data.current_price.usd}`;
-  document.querySelector("cryptoDescription").innerText = apiResponse.description.en;
+  console.log(apiResponse.id);
+  document.querySelector(".cryptoName").innerText = `Ticker: ${apiResponse.id}`;
+  document.querySelector(".cryptoPrice").innerText = `Current Price: $${apiResponse.market_data.current_price.usd}`;
+  document.querySelector(".cryptoDescription").innerText = apiResponse.description.en;
 
 }
 
