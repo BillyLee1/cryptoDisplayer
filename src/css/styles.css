@@ -1,3 +1,41 @@
 body {
   background-color: lightblue;
+  text-align: center;
+  padding: 50px;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+h3 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+p {
+  font-family: 'Orbitron', sans-serif;
+}
+
+form {
+  font-family: 'Orbitron', sans-serif;
+}
+
+button {
+  border-radius: 10px;
+}
+
+input {
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+label {
+  margin-right: 10px;
 }
