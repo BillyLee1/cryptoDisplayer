@@ -1,30 +1,16 @@
-import printElements from './index.js';
-
-
-function cryptoInfo(ticker) {
- let request = new XMLHttpRequest();
- const url = `https://api.coingecko.com/api/v3/coins/${ticker}`;
-
- request.addEventListener("loadend", function() {
-  const response = JSON.parse(this.responseText);
-  if (this.status === 200) {
-    console.log(response);
-    printElements(response);
-    
-  // } else {
-  //  handleError(this.statusText);
+export default class cryptoClass {
+  static cryptoInfo(ticker) {
+    return fetch(`https://api.coingecko.com/api/v3/coins/${ticker}`)
+    .then(function(response) {
+      if (!response) {
+        const errorMessage = `${response.status} ${response.statusText}`;
+        throw new Error(errorMessage);
+      } else {
+        return response.json();
+      }
+    })
+    .catch(function(error) {
+      return error;
+    })
   }
- });
-
- request.open("GET", url, true);
-
 }
-
-// function handleResponse(response) {
-//  console.log(response);
-// }
-
-// function handleError() {
-//  console.log("request failed");
-// }
-export default cryptoInfo;
