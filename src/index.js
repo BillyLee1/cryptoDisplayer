@@ -3,8 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import cryptoClass from './api.js';
 import cryptoAbb from './abb.js';
-// import React from 'react';
-// import ReactHtmlParser from 'react-html-parser';
+
 
 let handleFormSubmitter = (event) => {
   event.preventDefault();
@@ -15,10 +14,11 @@ let handleFormSubmitter = (event) => {
 }
 
 let parseAbb = (ticker) => {
-  cryptoAbb.cryptoSearch(ticker)
+  cryptoAbb.cryptoSearch()
   .then(function(response) {
     for (let i = 0; i < response.length; i++ ) {
       if (response[i].symbol === ticker) {
+        console.log(ticker + "we found it");
         printElements(response[i].id);
         break;
       }
